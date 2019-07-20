@@ -5,6 +5,7 @@ const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 
 const app=express()
+const port = process.env.PORT||3000
 const publicpath=path.join(__dirname,'../public')
 const temppath=path.join(__dirname,'../templates/views')
 const partialspath=path.join(__dirname,'../templates/partials')
@@ -100,6 +101,6 @@ app.get('*',(req,res)=>{
 
 })
 
-app.listen(3000,()=>{
- console.log("listening to port 3000")
+app.listen(port,()=>{
+ console.log("listening to port "+port)
 })
